@@ -109,9 +109,9 @@ class LocationController extends Controller
 
     public function searchLocation($name)
     {
-        \Log::info('Location search initiated', [
-            'search_term' => $name
-        ]);
+        // \Log::info('Location search initiated', [
+        //     'search_term' => $name
+        // ]);
 
         try {
             $location = Location::where('name', 'LIKE', "%{$name}%")->get();

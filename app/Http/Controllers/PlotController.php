@@ -13,7 +13,7 @@ class PlotController extends Controller
             'name' => 'required|string|unique:plots,name',
             'longitude' => 'required|string',
             'latitude' => 'required|string',
-            'water_rate' => 'required|double',
+            'water_rate' => 'required|numeric',
             'meter_number' => 'required|string|unique:plots,meter_number',
             'location_id' => 'required|integer|exists:locations,id'
         ]);
@@ -73,11 +73,11 @@ class PlotController extends Controller
     public function updatePlot($id, Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string|unique:plots,name',
+            'name' => 'required|string',
             'longitude' => 'required|string',
             'latitude' => 'required|string',
-            'water_rate' => 'required|double',
-            'meter_number' => 'required|string|unique:plots,meter_number',
+            'water_rate' => 'required|numeric',
+            'meter_number' => 'required|string',
             'location_id' => 'required|integer|exists:locations,id'
         ]);
 
